@@ -28,13 +28,14 @@ case $host_os in
   *mingw32*|*cygwin*|*msys*)
         AC_MSG_RESULT([${host_os}])
         win32=true
-        LDFLAGS+=" -no-undefined -lws2_32"
+        LDFLAGS+=" -lws2_32"
         ;;
 esac
 
 
 CXXFLAGS+=" -std=c++11 -O3"
 CFLAGS+=" -std=c11"
+LDFLAGS+=" -no-undefined"
 
 # Checks for libraries.
 LIBGENERAL_REQUIRES_STR="libgeneral >= 75"
